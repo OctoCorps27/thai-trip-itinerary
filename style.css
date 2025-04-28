@@ -144,6 +144,60 @@ nav a:hover::after {
     width: 70%;
 }
 
+.nav-logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-right: auto;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text);
+}
+
+/* Mobile sidebar */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    .nav-container {
+        justify-content: space-between;
+    }
+    #nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding-top: 70px;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+    #nav-links.show {
+        left: 0;
+    }
+    nav ul {
+        flex-direction: column;
+        background: none;
+    }
+    nav li {
+        margin: 15px 0;
+    }
+    nav a {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        color: var(--text);
+    }
+}
+
 /* Hero section */
 .hero {
     position: relative;
